@@ -1,5 +1,5 @@
 import './style.css';
-import removeBackground from '@imgly/background-removal';
+import { removeBackground } from '@imgly/background-removal';
 
 const MAX_SIZE = 20 * 1024 * 1024;
 const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
