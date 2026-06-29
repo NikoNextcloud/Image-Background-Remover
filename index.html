@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
+    <meta name="description" content="Безплатно премахване на фон от изображения директно в браузъра." />
+    <title>Чист Фон — премахване на фон</title>
+  </head>
+  <body>
+    <main>
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Начало">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>Чист Фон</span>
+        </a>
+        <span class="privacy-pill"><span></span> Снимката остава при вас</span>
+      </header>
+
+      <section class="hero">
+        <p class="eyebrow">AI инструмент за изображения</p>
+        <h1>Премахнете фона.<br><span>Запазете магията.</span></h1>
+        <p class="intro">Качете снимка, премахнете фона с един бутон и я свалете като прозрачен PNG.</p>
+      </section>
+
+      <section class="workspace" id="workspace">
+        <div class="upload-view" id="uploadView">
+          <div class="drop-zone" id="dropZone" tabindex="0" role="button" aria-label="Качете изображение">
+            <div class="upload-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
+            </div>
+            <h2>Пуснете снимката тук</h2>
+            <p>или изберете файл от устройството</p>
+            <button class="primary" id="chooseBtn" type="button">Избери снимка</button>
+            <p class="file-note">JPG, PNG или WebP · до 20 MB</p>
+            <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp" hidden />
+          </div>
+        </div>
+
+        <div class="editor-view hidden" id="editorView">
+          <div class="editor-head">
+            <div>
+              <p class="eyebrow">Вашето изображение</p>
+              <h2 id="fileName">Снимка</h2>
+            </div>
+            <button class="text-btn" id="newImageBtn" type="button">↻ Нова снимка</button>
+          </div>
+
+          <div class="compare-grid">
+            <figure class="preview-card">
+              <figcaption><span class="step">01</span> Преди</figcaption>
+              <div class="image-stage"><img id="beforeImage" alt="Оригинално изображение" /></div>
+            </figure>
+            <figure class="preview-card result-card">
+              <figcaption><span class="step">02</span> След</figcaption>
+              <div class="image-stage checker" id="resultStage">
+                <div class="empty-result" id="emptyResult">
+                  <span>✦</span>
+                  <p>Натиснете „Премахни фона“</p>
+                </div>
+                <img id="afterImage" class="hidden" alt="Изображение с премахнат фон" />
+                <div class="processing hidden" id="processing" role="status">
+                  <div class="spinner"></div>
+                  <strong id="progressText">Подготвяне на AI модела…</strong>
+                  <p>При първото използване може да отнеме малко повече време.</p>
+                  <div class="progress-track"><span id="progressBar"></span></div>
+                </div>
+              </div>
+            </figure>
+          </div>
+
+          <div class="actions">
+            <p class="status" id="statusText">Готово за обработване</p>
+            <div class="action-buttons">
+              <button class="secondary hidden" id="downloadBtn" type="button">↓ Свали PNG</button>
+              <button class="primary remove-btn" id="removeBtn" type="button"><span>✦</span> Премахни фона</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" aria-label="Предимства">
+        <article><span>⚡</span><div><strong>Автоматично</strong><p>Без ръчно очертаване</p></div></article>
+        <article><span>▦</span><div><strong>Прозрачен PNG</strong><p>Готов за дизайн и печат</p></div></article>
+        <article><span>⌾</span><div><strong>Поверително</strong><p>Обработва се в браузъра</p></div></article>
+      </section>
+    </main>
+    <footer>Чист Фон · Без регистрация · Без воден знак</footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
